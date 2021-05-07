@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: white;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-width: 340px;
+  min-height: 400px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(250, 248, 233, 1) 100%
+  );
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  padding: 5px;
+}
+
+#display {
+  height: 65px;
+  background: black;
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+#buttons {
+  display: grid;
+  width: 320px;
+  height: 325px;
+  grid-template-areas:
+    "ac ac div mult"
+    "seven eight nine sub"
+    "four five six add"
+    "one two three equals"
+    "zero zero dot equals";
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.button:hover {
+  border: 1px solid white;
+  color: 1px solid black;
+}
+
+.num {
+  background: slategray;
+}
+
+.op {
+  background: steelblue;
+}
+
+#clear {
+  grid-area: ac;
+  background: darkolivegreen;
+}
+
+#divide {
+  grid-area: div;
+}
+
+#multiply {
+  grid-area: mult;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#subtract {
+  grid-area: sub;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#add {
+  grid-area: add;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#equals {
+  grid-area: equals;
+  background: darkorange;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: dot;
+  background: slategray;
+}

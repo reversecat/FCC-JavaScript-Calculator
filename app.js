@@ -26,23 +26,27 @@ window.onload = function() {
 
 function updateDisplay() {
     display.innerText = evalString;
+    console.log(firstNum, operatorChosen, secondNum);
 }
 
 function handleNum(e) {
     if (!freshOperation) {
         handleClear();
     }
-    if (evalString.length > 15) {
-        return;
-    }
     if (e.target.innerText != "0") {
         if (evalString == "0") {
             evalString = "";
         }
         if (!operatorChosen) {
+            if (firstNum.length > 15) {
+                return;
+            }
             firstNum += e.target.innerText;
             evalString = firstNum;
         } else {
+            if (secondNum.length > 15) {
+                return;
+            }
             secondNum += e.target.innerText;
             evalString = secondNum;
         }
@@ -61,7 +65,6 @@ function handleNum(e) {
 }
 
 function handleOp(e) {
-    console.log(firstNum, operatorChosen, secondNum);
     if (e.target.innerText == "-") {
         if (firstNum == "") {
             firstNum = "-";

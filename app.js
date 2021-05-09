@@ -26,7 +26,7 @@ window.onload = function() {
 
 function updateDisplay() {
     display.innerText = evalString;
-    console.log(firstNum, operatorChosen, secondNum);
+    // console.log(firstNum, operatorChosen, secondNum);
 }
 
 function handleNum(e) {
@@ -92,7 +92,10 @@ function handleOp(e) {
 
 function handleEquals() {
     if (firstNum != "" && secondNum != "") {
-        firstNum = eval(firstNum + operatorChosen + secondNum).toString();
+        let s1 = firstNum.toString() + " ";
+        let s2 = operatorChosen.toString() + " ";
+        let s3 = secondNum.toString();
+        firstNum = eval(s1 + s2 + s3);
         firstNum =  Math.round(firstNum * Math.pow(10, 15)) / Math.pow(10, 15);
         secondNum = "";
         evalString = firstNum;
